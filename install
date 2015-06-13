@@ -21,3 +21,10 @@ brew cask install atom
 
 # configure git
 ln -s ~/dotfiles/git/config ~/.gitconfig
+
+# configure bash
+echo -e "
+if [ -f ~/dotfiles/bash/index ]; then
+  . ~/dotfiles/bash/index
+fi
+" >> ~/.profile

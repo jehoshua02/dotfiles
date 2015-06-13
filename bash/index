@@ -1,0 +1,3 @@
+source ~/dotfiles/bash/path
+source ~/dotfiles/bash/aliases
+source ~/dotfiles/bash/prompt

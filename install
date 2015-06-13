@@ -1,0 +1,20 @@
+# brew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew tap caskroom/cask
+brew install brew-cask
+
+# node
+brew install n
+n stable
+
+# vagrant and virtualbox
+brew cask install vagrant
+brew cask install virtualbox
+
+# browsers
+brew cask install google-chrome
+brew cask install firefox
+
+# misc
+brew cask install spectacle
+brew cask install atom

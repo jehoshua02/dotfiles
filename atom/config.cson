@@ -1,0 +1,12 @@
+"*":
+  "exception-reporting":
+    userId: "0bf8fe50-29aa-a903-7cc0-48ff39e44c0d"
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "atom-light-ui"
+      "atom-light-syntax"
+    ]
+  editor:
+    invisibles: {}

@@ -28,3 +28,6 @@ if [ -f ~/dotfiles/bash/index ]; then
   . ~/dotfiles/bash/index
 fi
 " >> ~/.profile
+
+# configure atom
+rm -fr ~/.atom; ln -s ~/dotfiles/atom ~/.atom

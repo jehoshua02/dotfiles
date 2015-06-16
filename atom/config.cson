@@ -8,5 +8,9 @@
       "atom-light-ui"
       "atom-light-syntax"
     ]
+    excludeVcsIgnoredPaths: false
   editor:
     invisibles: {}
+    showInvisibles: true
+    scrollPastEnd: true
+    showIndentGuide: true

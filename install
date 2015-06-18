@@ -20,6 +20,7 @@ brew cask install spectacle
 brew cask install atom
 brew cask install sequel-pro
 brew cask install slack
+brew install hub
 
 # configure git
 ln -s ~/dotfiles/git/config ~/.gitconfig

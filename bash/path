@@ -1,0 +1,8 @@
+paths=(
+  ./node_modules/.bin
+  ./vendor/bin
+  $PATH
+)
+
+printf -v PATH ':%s' "${paths[@]%}"
+PATH=${PATH:1}

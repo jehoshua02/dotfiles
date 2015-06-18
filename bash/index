@@ -1,3 +1,4 @@
 source ~/dotfiles/bash/path
 source ~/dotfiles/bash/aliases
 source ~/dotfiles/bash/prompt
+source /usr/local/etc/bash_completion

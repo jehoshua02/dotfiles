@@ -15,25 +15,28 @@ brew cask install virtualbox
 brew cask install google-chrome
 brew cask install firefox
 
-# git addons
+# git
 brew install hub
 brew install bash-completion
+ln -s ~/dotfiles/git/config ~/.gitconfig
+
+# atom
+brew cask install atom
+rm -fr ~/.atom; ln -s ~/dotfiles/atom ~/.atom
 
 # misc
 brew cask install spectacle
-brew cask install atom
 brew cask install sequel-pro
 brew cask install slack
 
-# configure git
-ln -s ~/dotfiles/git/config ~/.gitconfig
-
 # configure bash
+value=$(grep -ic "~/dotfiles/bash/index" ~/.profile)
+if [ $value -eq 0 ]; then
+
 echo -e "
 if [ -f ~/dotfiles/bash/index ]; then
   . ~/dotfiles/bash/index
 fi
 " >> ~/.profile
 
-# configure atom
-rm -fr ~/.atom; ln -s ~/dotfiles/atom ~/.atom
+fi

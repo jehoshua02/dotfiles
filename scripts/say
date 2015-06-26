@@ -1,0 +1,180 @@
+#!/usr/bin/env php
+<?php
+
+class SayCommand {
+
+  /**
+   * My favorite voices
+   * @var array
+   */
+  protected $voices = array(
+    // "Agnes",
+    // "Albert",
+    // "Alex",
+    // "Alice",
+    // "Alva",
+    // "Amelie",
+    // "Anna",
+    // "Bad News",
+    // "Bahh",
+    // "Bells",
+    // "Boing",
+    // "Bruce",
+    // "Bubbles",
+    // "Carmit",
+    // "Cellos",
+    // "Damayanti",
+    "Daniel",
+    // "Deranged",
+    // "Diego",
+    // "Ellen",
+    // "Fiona",
+    // "Fred",
+    // "Good News",
+    // "Hysterical",
+    // "Ioana",
+    // "Joana",
+    // "Junior",
+    // "Kanya",
+    // "Karen",
+    // "Kathy",
+    // "Kyoko",
+    // "Laura",
+    // "Lekha",
+    // "Luciana",
+    // "Mariska",
+    // "Mei-Jia",
+    // "Melina",
+    // "Milena",
+    // "Moira",
+    // "Monica",
+    // "Nora",
+    // "Paulina",
+    // "Pipe Organ",
+    // "Princess",
+    // "Ralph",
+    // "Samantha",
+    // "Sara",
+    // "Satu",
+    // "Sin-ji",
+    // "Tarik",
+    // "Tessa",
+    // "Thomas",
+    // "Ting-Ting",
+    // "Trinoids",
+    // "Veena",
+    // "Vicki",
+    // "Victoria",
+    // "Whisper",
+    // "Xander",
+    // "Yelda",
+    // "Yuna",
+    // "Zarvox",
+    // "Zosia",
+    // "Zuzana",
+  );
+
+  /**
+   * Some random messages
+   * @var array
+   */
+  protected $messages = array(
+    "You are sooo funny. Ha Ha.",
+    "Go eat a banana.",
+    "Ha Ha. Ha.",
+    "Get back to work.",
+    "That's what she said.",
+    "That's what you think.",
+    "Oh really?",
+    "You wish you were that cool.",
+    "Bugger off.",
+    "I love you too.",
+    "You are weird.",
+    "Please, please. Be quiet.",
+    "Guess what time it is?",
+    "That's right.",
+    "Please try again."
+  );
+
+  public function run($message = null, $voice = null) {
+    $message = $this->message($message);
+    $voice = $this->voice($voice);
+
+    if ($voice === "mix") {
+      $this->runMix($message);
+      return;
+    }
+
+    $cmd = sprintf("say -v %s %s", escapeshellarg($voice), escapeshellarg($message));
+    echo $cmd, "\n";
+    exec($cmd, $output, $return);
+  }
+
+  protected function runMix($message) {
+    $words = explode(" ", $message);
+    foreach ($words as $word) {
+      $this->run($word);
+    }
+  }
+
+  protected function message($default) {
+    if (is_string($default) && !empty($default)) {
+      return $default;
+    }
+
+    return $this->randomMessage();
+  }
+
+  protected function randomMessage() {
+    $messages = $this->messages;
+    $index = rand(0, count($messages) - 1);
+    return $messages[$index];
+  }
+
+  protected function voice($default) {
+    if (is_string($default)) {
+      return $default;
+    }
+
+    return $this->randomVoice();
+  }
+
+  protected function randomVoice() {
+    $voices = $this->voices;
+    $index = rand(0, count($voices) - 1);
+    return $voices[$index];
+  }
+}
+
+class SayCommandArgs {
+
+  /**
+   * Parse arguments for SayCommand
+   * @return array Associative array
+   */
+  public function parse() {
+    global $argv;
+
+    $args = array(
+      "message" => "",
+      "voice" => null,
+    );
+
+    if (isset($argv[1])) {
+      $args["message"] = $argv[1];
+    }
+
+    if (isset($argv[2])) {
+      $args["voice"] = $argv[2];
+    }
+
+    return $args;
+  }
+
+}
+
+$args = new SayCommandArgs();
+$args = $args->parse();
+
+$cmd = new SayCommand();
+$cmd->run($args["message"], $args["voice"]);

@@ -1,2 +1,3 @@
 alias ll='ls -lah'
 alias git='hub'
+alias s='~/dotfiles/scripts/say'

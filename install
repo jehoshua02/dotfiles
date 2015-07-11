@@ -23,6 +23,7 @@ ln -s ~/dotfiles/git/config ~/.gitconfig
 # atom
 brew cask install atom
 rm -fr ~/.atom; ln -s ~/dotfiles/atom ~/.atom
+rm -fr ~/.editorconfig; ln -s ~/dotfiles/.editorconfig ~/.editorconfig
 
 # misc
 brew cask install spectacle

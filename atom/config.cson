@@ -14,3 +14,5 @@
     showInvisibles: true
     scrollPastEnd: true
     showIndentGuide: true
+  "language-babel":
+    transpileOnSave: false

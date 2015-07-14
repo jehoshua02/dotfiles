@@ -34,6 +34,11 @@ brew cask install slack
 value=$(grep -ic "~/dotfiles/bash/index" ~/.profile)
 if [ $value -eq 0 ]; then
 
+# screenshots location
+mkdir ~/Screenshots
+defaults write com.apple.screencapture location ~/Screenshots
+killall SystemUIServer
+
 echo -e "
 if [ -f ~/dotfiles/bash/index ]; then
   . ~/dotfiles/bash/index

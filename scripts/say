@@ -79,6 +79,8 @@ class SayCommand {
    * @var array
    */
   protected $messages = array(
+
+    // Come Backs
     "You are sooo funny. Ha Ha.",
     "Go eat a banana.",
     "Ha Ha. Ha.",
@@ -93,7 +95,54 @@ class SayCommand {
     "Please, please. Be quiet.",
     "Guess what time it is?",
     "That's right.",
-    "Please try again."
+    "Please try again.",
+    "Life is beautiful. Unlike you.",
+    "Good morning to you too.",
+    "You are the weakest link. Good bye.",
+
+    // Nonsense
+    "Fart. Fart. Fart. I'm a Brittish guy saying 'Fart'.",
+
+    // Pop Music
+    // "Who let the dogs out? Who. Who, Who. Who who.",
+    // "Hey mockarayna.",
+    // "Oops I did it again.",
+    // "Livin la vida loca.",
+    // "It's all about the base. Bout the base. Bout the base. No treble.",
+    // "Don't speak. I know what you're thinking. Don't tell me cuz it hurts.",
+    // "I shake it off. Shake it off. Shake it off.",
+    // "Haters gonna hate, hate, hate, hate.",
+    // "Shut up and dance with me.",
+
+    // Mary Poppins
+    "Super cali fragilistic ex piala docious.",
+
+    // Nacho Libre
+    "Get that corn outta my face.",
+    "I'm not listening to you. You crazy.",
+    "I'm not listening to you. You only believe in science. That's probably why we never win.",
+    "Don't you want a little taste of the glory? See what it tastes like?",
+    "We never win because you are fat.",
+    "I don't want to get paid to lose. I wanna ween.",
+    "I need professional help. I need Ramsees.",
+    "I look heedious.",
+    "So anyways. Let's get down to the nitty gritty. Who is this encarnacion?",
+    "My favorite color is light tan. My favorite animal is poopies.",
+    "Today. I saw a man in town. People were throwing daisies at him. And giving him goodies. Sometimes I would like that kind of respect.",
+    "There are no spices. Where are the chips? Did you not tell them they were the Lord's chips?",
+    "Silence brothers. This is the worst lunch I ever had.",
+    "No, It is forbidden.",
+    "Do you not realize I have had diarrhea since easters?",
+    "I'm a little concerned right now. About your salvation and stuff.",
+    "I don't know why you always have to be judging me. Because I only believe in science.",
+    "I know it is fun to wrestle. Nice pile drive to the face. Or a punch to the face. But you cannot do it. Because it is in the Bible not to wrestle your neighbor.",
+    "I'm sick of hearing about your estupid orphans.",
+    "What did you just say?",
+    "I hate orphans.",
+    "Say it again to my face.",
+    "I hate dem",
+    "Come again?",
+    "I hate all the orphans in the whole world.",
   );
 
   public function run($message = null, $voice = null) {
